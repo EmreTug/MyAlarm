@@ -64,9 +64,11 @@ class _TimerPageState extends State<TimerPage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return 
+    Scaffold(
       backgroundColor: HexColor("#1D1D23"),
-      body: SafeArea(child: Column(
+      body: SafeArea(child: 
+      Column(
         
         children: [
           Expanded(

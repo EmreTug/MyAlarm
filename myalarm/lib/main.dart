@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:myalarm/Screen/AlarmPage.dart';
 import 'package:myalarm/Screen/ClockPage.dart';
 import 'package:myalarm/Screen/TimerPage.dart';
+import 'package:myalarm/Screen/settingsPage.dart';
 import 'package:myalarm/model/staticmodel.dart';
 void main() => runApp(MyApp());
 String mytitle="Alarm";
@@ -55,17 +56,17 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     Icons.alarm,
     Icons.watch_later_outlined,
     Icons.hourglass_bottom,
-    const IconData(0xe662, fontFamily: 'MaterialIcons')
+    Icons.settings
 
   ];  
   final pageList = <String>[
     'Alarm',
     'Clock',
     'Timer',
-    'StopWatch'
+    'Options'
 
   ];
-final screenList=[AlarmPage(),ClockPage(),TimerPage(),ClockPage()];
+final screenList=[AlarmPage(),ClockPage(),TimerPage(),SettingsPage()];
   @override
   void initState() {
     super.initState();

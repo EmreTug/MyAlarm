@@ -7,6 +7,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:intl/intl.dart';
 import 'package:myalarm/main.dart';
 import 'package:myalarm/model/staticmodel.dart';
+
+import '../widgets/clock.dart';
 class HexColor extends Color {
   static int _getColorFromHex(String hexColor) {
     hexColor = hexColor.toUpperCase().replaceAll("#", "");
@@ -32,7 +34,8 @@ class _ClockPageState extends State<ClockPage> {
     StaticClass.title="Clock";
     return Scaffold(
       
-      body: SafeArea(
+      body: 
+      SafeArea(
         child: Container(
           color: HexColor("1D1D23"),
           child: Column(
@@ -68,54 +71,8 @@ class _ClockPageState extends State<ClockPage> {
               scrollDirection: Axis.vertical,
               itemCount: 2,
               itemBuilder: (BuildContext ctxt, int index) {
-                return  Container(
-                  margin: EdgeInsets.only(bottom: 20,left: 15,right: 15),
-                  height:90,width: MediaQuery.of(context).size.width,decoration: BoxDecoration(
-                    color: HexColor("#34344A"),
-                    borderRadius: BorderRadius.circular(20)
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    Column(
-                      
-                      children: [
-                      Container(
-                        width: 100,
-                        margin: EdgeInsets.only(top: 27,bottom: 5,left: 24),
-                        child:  Text(
-                            
-                         "New York",
-                          style:const TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                          ),),),
-                          Container(
-                        width: 100,
-
-                        margin: EdgeInsets.only(left: 24),
-                            
-                            child:  Text(
-                            
-                          "-6h"
-                          ,
-                          style:const TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                          ),),),
-                    ],),
-                    Container(
-                      margin: EdgeInsets.only(right: 25),
-                      child:  Text(
-                            
-                          DateFormat('HH:mm').format(DateTime.now()),
-                          style:const TextStyle(
-                            color: Colors.white,
-                            fontSize: 60,
-                          ),),)
-
-                  ]),
-                  );
+                return  
+                  ClockWidget(color1: StaticClass.color1,color2: StaticClass.color2,);
               },
             ),
           
@@ -130,3 +87,4 @@ class _ClockPageState extends State<ClockPage> {
     );
   }
 }
+
